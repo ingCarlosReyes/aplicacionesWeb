@@ -1,0 +1,29 @@
+p{
+    background-color: rgb(83, 162, 44);
+    font-family: 'Courier New', Courier, monospace;
+}
+.clase1{
+    font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+    background-color: darkgreen;
+    padding: 5px;
+}
+
+#p9{
+    background-color: rgb(174, 176, 26);
+    margin: 20px;
+    padding:100px;
+}
+
+body{
+    background-repeat: no-repeat;
+    background-size: 200% 200%;
+}
+
+img{
+    margin: 20px;
+}
+
+.hola p{
+    background-color: coral;
+}
+
