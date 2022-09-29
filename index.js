@@ -12,8 +12,7 @@ app.use(express.json()); // sirve para POST y PUT requests // recognize the inco
 app.use(express.urlencoded({extended:true}));//para decirle a la pagina que tipo de datos le van a llegar ecognize the incoming Request Object as any type
 app.use(express.static(path.join(__dirname, 'public')));
 
-app.use('/consola',consolaRoutes); // parte donde añadimos router. aqui todas las app se agregaron a la principal
-// pusimos el diagonal consola para poder dividir secciones mas facil. ahora es necseario poner el /consola par entrar. esta mas ordenado
+app.use('/examen',examenRoutes); // parte donde añadimos router. aqui todas las app se agregaron a la principal
 
 
 // Recursos
@@ -57,6 +56,6 @@ app.post('/prueba3',(req,res)=>{
 
 
 // Lanzar la aplicación
-app.listen(8081,()=>{
+app.listen(8083,()=>{
     console.log('Servidor en línea!');
 });
