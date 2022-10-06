@@ -2,7 +2,8 @@
 const express = require('express');
 const path = require('path');
 const app = express(); 
-const consolaRoutes = require('./routes/consola') // se pone solo un punto porque esta en la misma carpeta, si no se ponddrian dos (..)
+const consolaRoutes = require('./routes/consola'); // se pone solo un punto porque esta en la misma carpeta, si no se ponddrian dos (..)
+const sequelize = require('./utils/databases');
 
 
 // Middleware 
@@ -54,8 +55,12 @@ app.post('/prueba3',(req,res)=>{
     res.send("Datos recibidos")
 })
 
+sequelize.sync({force:true})
+    .then(()=>{
+        console.log("Conexion exitosa");
+        // Lanzar la aplicación
+        app.listen(8081,()=>{
+            console.log('Servidor en línea!');
+        });
 
-// Lanzar la aplicación
-app.listen(8083,()=>{
-    console.log('Servidor en línea!');
-});
+}).catch(error=>console.log(error))
